@@ -1,0 +1,1 @@
+This project contains the Emilio's personal website, in order to be published in Git Pages. This website has been developed using [Jekyll](http://jekyllrb.com/ "Jekyll") and [Bootstrap 3](http://getbootstrap.com/ "Twitter Bootstrap").

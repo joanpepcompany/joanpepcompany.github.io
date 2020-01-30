@@ -1,0 +1,85 @@
+---
+layout: default
+id: resources
+---
+<a name="software"></a>
+<h3 class="title-und">Software</h3>
+<h4 class="title-und">HTMap - Hierarchical Topological Mapping</h4>
+<p class="text-justify">
+HTMap is an appearance-based approach for topological mapping based on a hierarchical decomposition of the environment. In HTMap, images with similar visual properties are grouped together in nodes, which are represented by means of an average global descriptor (PHOG) and an index of binary features based on an incremental bag-of-binary-words approach (OBIndex). Each image is represented by means of a global descriptor and a set of local features, and this information is used in a two-level loop closure approach, where, first, global descriptors are employed to obtain the most likely nodes of the map and then binary image features are used to retrieve the most likely images inside these nodes. This hierarchical scheme allows us to reduce the search space when recognizing places, maintaining high accuracy when creating a map. The algorithm can be used to detect loop closures in a unknown environment, without the need of a training stage, as it is usual in BoW schemes.
+<br />
+<br />
+<a href="http://github.com/emiliofidalgo/htmap.git">Further information</a>
+
+<h4 class="title-und">iBoW-LCD - Loop Closure Detection using Online Bags of Words</h4>
+<p class="text-justify">
+iBoW-LCD is a library that can be used to detect loop closures in a sequence of images. Instead of using the typical Bag-of-Words (BoW) scheme, iBoW-LCD makes use of an incremental Bags of Binary Words algorithm called OBIndex2, allowing the use of binary descriptors to accelerate the image description process and avoiding the problems that classical BoW approaches present.
+<br />
+<br />
+<a href="http://github.com/emiliofidalgo/ibow-lcd.git">Further information</a>
+
+<h4 class="title-und">OBINDEX2 - Online Binary Image Index</h4>
+<p class="text-justify">
+A new version of the original OBIndex library. It was created from the scratch and the FLANN library is no longer required.
+<br />
+<br />
+<a href="http://github.com/emiliofidalgo/obindex2.git">Further information</a>
+
+<h4 class="title-und">BIMOS - Binary Descriptor-based Image Mosaicing</h4>
+<p class="text-justify">
+BIMOS (Binary descriptor-based Image Mosaicing) is an open source image mosaicing algorithm which can produce seamless mosaics on different scenarios and camera configurations in a reasonable amount of time. It is based on a multi-threaded mosaicing architecture that permits decoupling the strategic steps involved in the process, speeding up the time required to estimate the final topology. In order to find the existent relations between the images, BIMOS employs OBIndex, a binary BoW scheme that is built online, allowing the use of binary descriptors to accelerate the image description process.
+<br />
+<br />
+<a href="https://github.com/emiliofidalgo/bimos.git">Further information</a>
+
+<h4 class="title-und">OBINDEX - Online Binary Image Index</h4>
+<p class="text-justify">
+OBINDEX is an open source C++ library for indexing images. It implements a hierarchical indexing scheme to match binary descriptors, which is used as an incremental Bag-Of-Words (BoW) visual vocabulary. This index is combined with an inverted file in order to provide an image database, that can be queried for finding similar images. This online binary visual vocabulary tries to solve the main drawbacks that classical BoW approaches present, avoiding the training step and adapting the visual dictionary to the operating environment.
+<br />
+<br />
+<a href="https://github.com/emiliofidalgo/obindex.git">Further information</a>
+
+<h4 class="title-und">MiniKing - MiniKing Sonar Library</h4>
+<p class="text-justify">
+This package contains a C++ class for programming the MiniKing sonar, from Tritech. It is released as a ROS package, and relies on Boost for serial communication.<br />
+<br />
+<a href="https://github.com/emiliofidalgo/miniking.git">Further information</a>
+
+<a name="datasets"></a>
+<h3 class="title-und">Datasets</h3>
+<h4 class="title-und">Visual Loop Closure</h4>
+<p class="text-justify">
+These datasets were recorded around a building at the <a href="http://www.uib.es">University of the Balearic Islands</a> and can be used to assess the quality of visual loop closure algorithms. If you use them, please cite:
+<div class="alert alert-info" align="center">
+<font size="-1">
+<b>Vision-Based Topological Mapping and Localization <br/>by means of Local Invariant Features and Map Refinement</b><br>
+Emilio Garcia-Fidalgo and Alberto Ortiz<br>
+Robotica (ROB),  Volume 33, Issue 07, August 2015, pp 1446-1470<br>
+<a href="/static/papers/journal_ROB_Garcia2014.pdf">[PDF]</a>
+</font>
+</div>
+
+<ul>
+	<li><a href="https://www.dropbox.com/s/poiarwuz8ux1qkf/UIB_small_loop.zip">UIB Small Loop</a> (53.82 MB)</li>
+	<li><a href="https://www.dropbox.com/s/4p8o8ct90h10bmm/UIB_large_loop.zip">UIB Large Loop</a> (139.7 MB)</li>
+	<li><a href="https://www.dropbox.com/s/epk3vcbz14ed3rm/UIB_indoor.zip">UIB Indoor Loop</a> (42.06 MB)</li>
+</ul>
+</p>
+<p class="text-justify">
+Each file contains:
+<ul>
+	<li>A directory called <em>images</em>. This directory includes an ordered sequence of images in PNG format. The size of the images is 300x240 and they were acquired at 1Hz.</li><br>
+	<li>A ground truth file in Matlab format, <em>groundtruth.mat</em>. This file includes a binary matrix where entry (<em>i</em>, <em>j</em>) is 1 if image <em>i</em> and image <em>j</em> can be considered as the same place, and 0 otherwise. Therefore, the <em>i</em>-th row represents the possible loop closures for image <em>i</em>. This ground truth was generated manually, and perhaps it should be modified if you want to use it as a reference.</li>
+</ul>
+</p>
+Examples:
+<br><br>
+<div class="row">
+	<div class="span5 text-center">
+		<img src="/img/UIB_outdoor.png" alt="Outdoor" />
+	</div>
+	<div class="span4 text-center">
+		<img src="/img/UIB_indoor.png" alt="Indoor" />
+	</div>
+</div>
+</div>
